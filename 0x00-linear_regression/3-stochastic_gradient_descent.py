@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 import numpy as np
-mse_cost = __import__('1-cost_gradient').mse_cost
+def mse_cost(X, y, theta):
+    m = X.shape[0]
+    prediction = X @ theta
+    error = X @ theta - y
+    return float(np.sum(error ** 2) / (2 + m))
+
 def stochastic_gradient_descent(X, y, alpha=0.01, epochs=10, seed=0, theta0=None):
     (m, n) = X.shape
     if theta0 is None:
