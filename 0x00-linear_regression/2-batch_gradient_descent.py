@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import numpy as np
+mse_cost = __import__('1-cost_gradient').mse_cost
+mse_gradient = __import__('1-cost_gradient').mse_gradient
+def batch_gradient_descent(X, y, alpha=0.01, iterations=1000, theta0=None):
+    n = X.shape[1]
+    if theta0 is None:
+        theta = np.zeros(n)
+    else:
+        theta = np.array(theta0, dtype=float)
+    costs = np.zeros(iterations + 1)
+    costs[0] = mse_cost(X, y, theta)
+    for t in range(iterations):
+        theta = theta - alpha * mse_gradient(X, y, theta)
+        costs[t + 1] = mse_cost(X, y, theta)
+    return(theta, costs)
