@@ -4,3 +4,4 @@ Compare gradient descent and newton's method : cost per iteration, number of ite
 Implement a numerically stable sigmoid and cross-entropy that never overflow
 Explain the diffference between parametric and non-parametric learning using LWR as the example
 Train and evaluate a binary clasiifier on real image data (MNIST 0 vs 1)
+0x01-logistic regression
